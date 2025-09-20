@@ -1,0 +1,144 @@
+[
+  {
+    "id": 7453,
+    "type": "host-to-guest",
+    "status": "published",
+    "rating": null,
+    "publicReview": "Shane and family are wonderful! Would definitely host again :)",
+    "reviewCategory": [
+      { "category": "cleanliness", "rating": 10 },
+      { "category": "communication", "rating": 10 },
+      { "category": "respect_house_rules", "rating": 10 }
+    ],
+    "submittedAt": "2020-08-21 22:45:14",
+    "guestName": "Shane Finkelstein",
+    "listingName": "2B N1 A - 29 Shoreditch Heights"
+  },
+  {
+    "id": 7454,
+    "type": "guest-to-host",
+    "status": "published",
+    "rating": 8,
+    "publicReview": "Great location, clean apartment but a bit noisy at night.",
+    "reviewCategory": [
+      { "category": "cleanliness", "rating": 9 },
+      { "category": "communication", "rating": 8 },
+      { "category": "location", "rating": 7 }
+    ],
+    "submittedAt": "2020-09-01 14:20:00",
+    "guestName": "Emily Johnson",
+    "listingName": "1B Soho Loft"
+  },
+  {
+    "id": 7453,
+    "type": "guest-to-host",
+    "status": "published",
+    "rating": null,
+    "publicReview": "Amazing stay at this beautiful property! The location was perfect and the amenities exceeded our expectations. Would definitely book again.",
+    "reviewCategory": [
+      { "category": "cleanliness", "rating": 9 },
+      { "category": "communication", "rating": 10 },
+      { "category": "location", "rating": 10 },
+      { "category": "value", "rating": 8 }
+    ],
+    "submittedAt": "2024-01-15 14:30:22",
+    "guestName": "Sarah Mitchell",
+    "listingName": "2B N1 A - 29 Shoreditch Heights"
+  },
+  {
+    "id": 7454,
+    "type": "guest-to-host",
+    "status": "published",
+    "rating": null,
+    "publicReview": "Great apartment in the heart of Shoreditch. Clean, modern, and well-equipped. The host was very responsive and helpful throughout our stay.",
+    "reviewCategory": [
+      { "category": "cleanliness", "rating": 10 },
+      { "category": "communication", "rating": 9 },
+      { "category": "location", "rating": 9 },
+      { "category": "value", "rating": 9 }
+    ],
+    "submittedAt": "2024-01-12 09:15:33",
+    "guestName": "James Chen",
+    "listingName": "2B N1 A - 29 Shoreditch Heights"
+  },
+  {
+    "id": 7455,
+    "type": "guest-to-host",
+    "status": "published",
+    "rating": null,
+    "publicReview": "Lovely studio apartment with all the essentials. The building is modern and secure. Only minor issue was the shower pressure could be better.",
+    "reviewCategory": [
+      { "category": "cleanliness", "rating": 8 },
+      { "category": "communication", "rating": 10 },
+      { "category": "location", "rating": 9 },
+      { "category": "value", "rating": 8 }
+    ],
+    "submittedAt": "2024-01-10 16:45:12",
+    "guestName": "Emma Rodriguez",
+    "listingName": "Studio Kings Cross - Central London"
+  },
+  {
+    "id": 7456,
+    "type": "guest-to-host",
+    "status": "published",
+    "rating": null,
+    "publicReview": "Fantastic location near London Bridge! The apartment was spotless and had everything we needed. The host provided excellent local recommendations.",
+    "reviewCategory": [
+      { "category": "cleanliness", "rating": 10 },
+      { "category": "communication", "rating": 10 },
+      { "category": "location", "rating": 10 },
+      { "category": "value", "rating": 9 }
+    ],
+    "submittedAt": "2024-01-08 11:20:45",
+    "guestName": "Michael Thompson",
+    "listingName": "1B London Bridge Luxury Flat"
+  },
+  {
+    "id": 7457,
+    "type": "guest-to-host",
+    "status": "published",
+    "rating": null,
+    "publicReview": "The apartment was nice but had some maintenance issues. The heating wasn't working properly and the WiFi was slow. Location is great though.",
+    "reviewCategory": [
+      { "category": "cleanliness", "rating": 7 },
+      { "category": "communication", "rating": 8 },
+      { "category": "location", "rating": 9 },
+      { "category": "value", "rating": 6 }
+    ],
+    "submittedAt": "2024-01-05 20:12:18",
+    "guestName": "Lisa Park",
+    "listingName": "Studio Kings Cross - Central London"
+  },
+  {
+    "id": 7458,
+    "type": "guest-to-host",
+    "status": "published",
+    "rating": null,
+    "publicReview": "Exceptional stay! The property exceeded all expectations. Modern, clean, and in a prime location. The host was incredibly helpful and responsive.",
+    "reviewCategory": [
+      { "category": "cleanliness", "rating": 10 },
+      { "category": "communication", "rating": 10 },
+      { "category": "location", "rating": 10 },
+      { "category": "value", "rating": 10 }
+    ],
+    "submittedAt": "2024-01-03 13:55:27",
+    "guestName": "David Wilson",
+    "listingName": "Penthouse Canary Wharf Views"
+  },
+  {
+    "id": 7459,
+    "type": "guest-to-host",
+    "status": "published",
+    "rating": null,
+    "publicReview": "Good value for money in this area. The apartment was clean and functional. Would have liked better kitchen equipment but overall satisfied.",
+    "reviewCategory": [
+      { "category": "cleanliness", "rating": 8 },
+      { "category": "communication", "rating": 9 },
+      { "category": "location", "rating": 8 },
+      { "category": "value", "rating": 8 }
+    ],
+    "submittedAt": "2024-01-01 10:33:14",
+    "guestName": "Anna Kowalski",
+    "listingName": "1B London Bridge Luxury Flat"
+  }
+]
