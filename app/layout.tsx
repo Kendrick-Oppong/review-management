@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Bai_Jamjuree } from "next/font/google";
 import "./globals.css";
+import { QueryProvider } from "@/lib/providers/query-provider";
 
 const bai_Jamjuree = Bai_Jamjuree({
   subsets: ["latin"],
@@ -20,10 +21,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${bai_Jamjuree.className} antialiased`}>
-        {children}
-      </body>
-    </html>
+    <QueryProvider>
+      <html lang="en">
+        <body className={`${bai_Jamjuree.className} antialiased`}>
+          {children}
+        </body>
+      </html>
+    </QueryProvider>
   );
 }
