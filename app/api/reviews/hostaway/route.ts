@@ -28,7 +28,7 @@ export async function GET() {
 
     const hostAwayData = await hostawayRes.json();
 
-    // Raw reviews: either from Hostaway or static fallback
+    // Raw reviews: Hostaway or static fallback
     const rawReviews =
       hostAwayData?.result && hostAwayData.result.length > 0
         ? (hostAwayData.result as Review[])
