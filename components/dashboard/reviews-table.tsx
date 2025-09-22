@@ -82,7 +82,7 @@ export function ReviewsTable({ reviews = [] }: Readonly<ReviewsTableProps>) {
             <Badge variant="outline">{filteredReviews.length} reviews</Badge>
           </CardTitle>
           <div className="flex flex-wrap items-center gap-2">
-            <Button variant="outline" className="border-primary">
+            <Button variant="default" className="dark:text-white">
               <Link href="/">View Property Details</Link>
             </Button>
             {selectedReviews.length > 0 && (
