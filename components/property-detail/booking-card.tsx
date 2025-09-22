@@ -55,7 +55,7 @@ export const BookingCard = () => {
   return (
     <div className="lg:col-span-1">
       <div className="sticky top-24">
-        <Card className="shadow-lg border border-gray-200">
+        <Card className="shadow-lg border pt-0 border-gray-200">
           <CardHeader className="bg-[#284E4C] text-white py-5 rounded-t-xl">
             <h3 className="text-xl font-bold">Book Your Stay</h3>
             <p className="text-teal-100 text-sm">Select dates to see prices</p>
@@ -138,11 +138,9 @@ export const BookingCard = () => {
                   <span>£{totalPrice.toLocaleString()}</span>
                 </div>
 
-                <div className="flex justify-between text-sm text-green-600">
+                <div className="flex justify-between text-sm bg-green-100 rounded-sm p-2">
                   <div className="flex items-center space-x-1">
-                    <Badge className="bg-green-100 text-green-700">
-                      20% length of stay discount
-                    </Badge>
+                    20% length of stay discount
                   </div>
                   <span>-£{discount.toLocaleString()}</span>
                 </div>
@@ -157,9 +155,7 @@ export const BookingCard = () => {
               <div className="border-t pt-4">
                 <div className="flex items-center space-x-2 mb-2">
                   <Ticket className="w-4 h-4 text-gray-500" />
-                  <Label className="text-sm text-gray-600">
-                    Have a coupon?
-                  </Label>
+                  <p className="text-sm text-gray-600">Have a coupon?</p>
                 </div>
                 <div className="flex space-x-2">
                   <Input

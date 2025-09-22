@@ -8,6 +8,7 @@ import { Amenities } from "./amenities";
 import { StayPolicy } from "./stay-policy";
 import { BookingCard } from "./booking-card";
 import { PropertyGallery } from "./gallery";
+import { GuestReviews } from "./guest-reviews";
 
 export const PropertyDetail = () => {
   return (
@@ -50,12 +51,11 @@ export const PropertyDetail = () => {
             <Amenities />
 
             <StayPolicy />
+            <GuestReviews />
           </div>
 
           <BookingCard />
         </div>
-
-        {/* Guest Reviews */}
       </div>
     </div>
   );

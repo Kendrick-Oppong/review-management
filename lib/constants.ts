@@ -47,3 +47,5 @@ export const sideImages = [
   "https://images.pexels.com/photos/1571452/pexels-photo-1571452.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop",
   "https://images.pexels.com/photos/1571467/pexels-photo-1571467.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop",
 ];
+
+export const STORAGE_KEY = "approvedReviews";

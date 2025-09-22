@@ -8,13 +8,14 @@ import { ReviewListProps } from "@/interface/api";
 import { Badge } from "../ui/badge";
 import { RatingBadge } from "../ui/rating-badge";
 import { cn } from "@/lib/utils";
+import { ConfirmApprovalDialog } from "./confirm-approval";
 
 export function ReviewList({
   reviews,
   selectedReviews,
-  publicReviews,
+  approved,
   onSelectionChange,
-  onPublicToggle,
+  onApprovalToggle,
 }: Readonly<ReviewListProps>) {
   if (reviews.length === 0) {
     return (
@@ -35,7 +36,7 @@ export function ReviewList({
       <div className="space-y-4">
         {reviews.map((review) => {
           const isSelected = selectedReviews.includes(review.id);
-          const isPublic = publicReviews.has(review.id);
+          const isApproved = approved.includes(review.id);
 
           return (
             <div
@@ -72,30 +73,31 @@ export function ReviewList({
                       <Calendar className="w-3 h-3" />
                       {new Date(review.date).toLocaleDateString()}
                     </span>
-
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      onClick={() => onPublicToggle(review.id)}
-                      className={cn(
-                        "flex items-center gap-1",
-                        isPublic
-                          ? "text-green-400 hover:text-green-300"
-                          : "text-muted-foreground hover:text-foreground"
-                      )}
+                    <ConfirmApprovalDialog
+                      isApproved={isApproved}
+                      onConfirm={() => onApprovalToggle(review.id)}
                     >
-                      {isPublic ? (
-                        <>
-                          <Eye className="w-4 h-4" />
-                          Public
-                        </>
-                      ) : (
-                        <>
-                          <EyeOff className="w-4 h-4" />
-                          Hidden
-                        </>
-                      )}
-                    </Button>
+                      <Button
+                        variant="ghost"
+                        size="sm"
+                        className={cn(
+                          "flex items-center gap-1",
+                          isApproved
+                            ? "text-green-400 hover:text-green-300"
+                            : "text-muted-foreground hover:text-foreground"
+                        )}
+                      >
+                        {isApproved ? (
+                          <>
+                            <Eye className="w-4 h-4" /> Public
+                          </>
+                        ) : (
+                          <>
+                            <EyeOff className="w-4 h-4" /> Hidden
+                          </>
+                        )}
+                      </Button>
+                    </ConfirmApprovalDialog>
                   </div>
                 </div>
 

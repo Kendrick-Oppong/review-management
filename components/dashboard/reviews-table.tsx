@@ -11,6 +11,8 @@ import { NormalizedReview } from "@/interface/api";
 import { ChannelFilter } from "./channel-filter";
 import { RatingFilter } from "./rating-filter";
 import { ReviewList } from "./review-list";
+import { useApprovedReviews } from "@/lib/hooks/use-approve-reviews";
+import { ConfirmApprovalDialog } from "./confirm-approval";
 
 interface ReviewsTableProps {
   reviews: NormalizedReview[];
@@ -21,7 +23,8 @@ export function ReviewsTable({ reviews = [] }: Readonly<ReviewsTableProps>) {
   const [selectedChannel, setSelectedChannel] = useState("all");
   const [selectedRating, setSelectedRating] = useState("all");
   const [selectedReviews, setSelectedReviews] = useState<number[]>([]);
-  const [publicReviews, setPublicReviews] = useState<Set<number>>(new Set());
+
+  const { approved, toggleApproval } = useApprovedReviews();
 
   const filteredReviews = useMemo(() => {
     return reviews.filter((review) => {
@@ -44,16 +47,6 @@ export function ReviewsTable({ reviews = [] }: Readonly<ReviewsTableProps>) {
       return matchesSearch && matchesChannel && matchesRating;
     });
   }, [reviews, searchTerm, selectedChannel, selectedRating]);
-
-  const togglePublicDisplay = (reviewId: number) => {
-    const newPublicReviews = new Set(publicReviews);
-    if (newPublicReviews.has(reviewId)) {
-      newPublicReviews.delete(reviewId);
-    } else {
-      newPublicReviews.add(reviewId);
-    }
-    setPublicReviews(newPublicReviews);
-  };
 
   const handleSelectionChange = (reviewId: number, checked: boolean) => {
     if (checked) {
@@ -91,10 +84,19 @@ export function ReviewsTable({ reviews = [] }: Readonly<ReviewsTableProps>) {
 
           <div className="flex items-center gap-2">
             {selectedReviews.length > 0 && (
-              <Button size="sm" className="dark:text-white">
-                <Eye className="w-4 h-4 mr-2" />
-                Approve Selected ({selectedReviews.length})
-              </Button>
+              <ConfirmApprovalDialog
+                isApproved={approved.some((id) => selectedReviews.includes(id))}
+                count={selectedReviews.length}
+                onConfirm={() => {
+                  selectedReviews.forEach((id) => toggleApproval(id));
+                  setSelectedReviews([]);
+                }}
+              >
+                <Button size="sm" className="dark:text-white">
+                  <Eye className="w-4 h-4 mr-2" />
+                  Selected ({selectedReviews.length})
+                </Button>
+              </ConfirmApprovalDialog>
             )}
           </div>
         </div>
@@ -131,9 +133,9 @@ export function ReviewsTable({ reviews = [] }: Readonly<ReviewsTableProps>) {
       <ReviewList
         reviews={filteredReviews}
         selectedReviews={selectedReviews}
-        publicReviews={publicReviews}
+        approved={approved}
         onSelectionChange={handleSelectionChange}
-        onPublicToggle={togglePublicDisplay}
+        onApprovalToggle={toggleApproval}
       />
     </Card>
   );

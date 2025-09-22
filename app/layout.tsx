@@ -3,6 +3,7 @@ import { Bai_Jamjuree } from "next/font/google";
 import "./globals.css";
 import { QueryProvider } from "@/lib/providers/query-provider";
 import { ThemeProvider } from "@/lib/providers/theme-provider";
+import { Toaster } from "@/components/ui/sonner";
 
 const bai_Jamjuree = Bai_Jamjuree({
   subsets: ["latin"],
@@ -34,6 +35,18 @@ export default function RootLayout({
             {children}
           </ThemeProvider>
         </body>
+        <Toaster
+          style={{ fontFamily: "inherit" }}
+          position="top-center"
+          className="text-base"
+          toastOptions={{
+            classNames: {
+              toast: "!bg-background",
+              title: "!text-base !text-black dark:!text-white",
+              description: "!text-base !text-black dark:!text-white !mt-2",
+            },
+          }}
+        />
       </html>
     </QueryProvider>
   );
