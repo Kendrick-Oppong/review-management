@@ -5,5 +5,8 @@ export const useGetAllReviews = () => {
   return useQuery({
     queryKey: ["reviews"],
     queryFn: () => getAllReviews(),
+    staleTime: 0,
+    refetchOnMount: true,
+    refetchOnWindowFocus: false,
   });
 };

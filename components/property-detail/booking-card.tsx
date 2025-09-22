@@ -12,7 +12,7 @@ import {
 } from "@/components/ui/select";
 import { Calendar as CalendarComponent } from "@/components/ui/calendar";
 
-import { CalendarIcon, Users, Badge, Ticket } from "lucide-react";
+import { CalendarIcon, Users, Ticket } from "lucide-react";
 import { Label } from "recharts";
 import { Card, CardHeader, CardContent } from "../ui/card";
 import { Input } from "../ui/input";

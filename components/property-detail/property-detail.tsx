@@ -44,8 +44,8 @@ export const PropertyDetail = () => {
           </div>
         </div>
 
-        {/* Grid Layout for Property Details and Booking Card */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          {/*  Property Details  */}
           <div className="lg:col-span-2">
             <AboutProperty />
             <Amenities />
@@ -53,7 +53,7 @@ export const PropertyDetail = () => {
             <StayPolicy />
             <GuestReviews />
           </div>
-
+          {/*  Booking Card */}
           <BookingCard />
         </div>
       </div>

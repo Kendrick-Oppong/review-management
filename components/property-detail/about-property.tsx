@@ -16,7 +16,7 @@ export const AboutProperty = () => {
         About this property
       </h2>
 
-      {/* Always visible first paragraph */}
+      {/*  visible first paragraph */}
       <p className="text-gray-700 mb-4">
         Located on Rua do Crucifixo in central Lisbon, this cozy 1-bedroom flat
         offers comfort and convenience. Enjoy a bright living space, a
@@ -49,7 +49,7 @@ export const AboutProperty = () => {
             excellent transport links nearby, it’s the perfect base for
             exploring the city.
           </p>
-          <ul className="text-gray-700 list-none mb-4 list-disc list-inside">
+          <ul className="text-gray-700 list-none mb-4 list-inside">
             <li>Organi Chiado - 2 minute walk</li>
             <li>Feel Rio - 1 minute walk</li>
             <li>Baixa-Chiado - 1 minute walk</li>
