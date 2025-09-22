@@ -11,13 +11,11 @@ import {
 import type { NormalizedReview } from "@/interface/api";
 import { colors } from "@/lib/constants";
 
-
 interface ReviewsChartProps {
   reviews: NormalizedReview[];
 }
 
 export function ReviewsChart({ reviews = [] }: Readonly<ReviewsChartProps>) {
-
   // property-based distribution instead of rating distribution
   const propertyStats = reviews.reduce((acc, review) => {
     if (!review.listing || !review.rating) return acc;
@@ -123,7 +121,7 @@ export function ReviewsChart({ reviews = [] }: Readonly<ReviewsChartProps>) {
                       const dataItem = chartData.find((d) => d.name === name);
                       if (dataItem) {
                         return [
-                          `★${dataItem.avgRating} (${value} reviews)`,
+                          `${dataItem.avgRating}★ - reviews`,
                           dataItem.name,
                         ];
                       }

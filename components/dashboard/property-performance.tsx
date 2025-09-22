@@ -100,8 +100,8 @@ export function PropertyPerformance({
       </CardHeader>
       <CardContent>
         <div className="space-y-6">
-          {properties.map((property, index) => (
-            <div key={index} className="space-y-3">
+          {properties.map((property) => (
+            <div key={property.name} className="space-y-3">
               <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
                 <div className="flex-1 min-w-0">
                   <h4 className="font-medium text-sm truncate">
