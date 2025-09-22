@@ -13,7 +13,7 @@ export interface NormalizedReview {
   channel: string; // mapped from channelId
 }
 
- interface ReviewCategory {
+interface ReviewCategory {
   category: string;
   rating: number;
 }
@@ -43,4 +43,17 @@ export interface Review {
   arrivalDate: string;
   listingName: string;
   guestName: string;
+}
+
+export interface ReviewFilters {
+  status: "all" | "approved" | "pending";
+  propertyName?: string;
+  rating?: number;
+  category?: string;
+}
+
+export interface DashboardHeaderProps {
+  filters?: ReviewFilters;
+  onFiltersChange?: (filters: ReviewFilters) => void;
+  properties?: string[];
 }
