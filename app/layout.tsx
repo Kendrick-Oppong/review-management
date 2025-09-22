@@ -34,7 +34,6 @@ export default function RootLayout({
           >
             {children}
           </ThemeProvider>
-        </body>
         <Toaster
           style={{ fontFamily: "inherit" }}
           position="top-center"
@@ -47,6 +46,7 @@ export default function RootLayout({
             },
           }}
         />
+        </body>
       </html>
     </QueryProvider>
   );

@@ -1,10 +1,7 @@
 "use client";
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import {
-  TrendingUp,
-  TrendingDown,
   Star,
   MessageSquare,
   Eye,
@@ -12,14 +9,16 @@ import {
   Building2,
   Users,
 } from "lucide-react";
-import { cn } from "@/lib/utils";
 import type { NormalizedReview } from "@/interface/api";
+import { useApprovedReviews } from "@/lib/hooks/use-approve-reviews";
 
 interface MetricsGridProps {
   reviews: NormalizedReview[];
 }
 
 export function MetricsGrid({ reviews = [] }: Readonly<MetricsGridProps>) {
+  const { approved } = useApprovedReviews();
+
   const totalReviews = reviews.length;
   const reviewsWithRating = reviews.filter((r) => r.rating && r.rating > 0);
   const averageRating =
@@ -30,8 +29,9 @@ export function MetricsGrid({ reviews = [] }: Readonly<MetricsGridProps>) {
         ).toFixed(1)
       : "0.0";
 
-  const publicReviews = reviews.filter((r) => r.status === "published").length;
-  const pendingReviews = reviews.filter((r) => r.status === "pending").length;
+  const publicReviews = reviews.filter((r) => approved.includes(r.id)).length;
+  const pendingReviews = totalReviews - publicReviews;
+
   const uniqueProperties = new Set(reviews.map((r) => r.listing)).size;
   const guestToHostReviews = reviews.filter(
     (r) => r.type === "guest-to-host"
@@ -45,48 +45,41 @@ export function MetricsGrid({ reviews = [] }: Readonly<MetricsGridProps>) {
     {
       title: "Total Reviews",
       value: totalReviews.toString(),
-      change: "+12.5%",
-      trend: "up" as const,
+
       icon: MessageSquare,
       description: "from Hostaway API",
     },
     {
       title: "Average Rating",
       value: averageRating,
-      change: "+0.2",
-      trend: "up" as const,
+
       icon: Star,
       description: "across all properties",
     },
     {
       title: "Public Reviews",
       value: publicReviews.toString(),
-      change: "+8.3%",
-      trend: "up" as const,
+
       icon: Eye,
       description: "approved for display",
     },
     {
       title: "Pending Approval",
       value: pendingReviews.toString(),
-      change: "-15.2%",
-      trend: "down" as const,
+
       icon: AlertTriangle,
       description: "awaiting review",
     },
     {
       title: "Active Properties",
       value: uniqueProperties.toString(),
-      change: "+2",
-      trend: "up" as const,
+
       icon: Building2,
       description: "with recent reviews",
     },
     {
       title: "Response Rate",
       value: `${responseRate}%`,
-      change: "+2.1%",
-      trend: "up" as const,
       icon: Users,
       description: "host responses",
     },
@@ -110,22 +103,6 @@ export function MetricsGrid({ reviews = [] }: Readonly<MetricsGridProps>) {
                   {metric.description}
                 </p>
               </div>
-              <Badge
-                variant="outline"
-                className={cn(
-                  "flex items-center gap-1",
-                  metric.trend === "up"
-                    ? "text-green-400 border-green-400/20 bg-green-400/10"
-                    : "text-red-400 border-red-400/20 bg-red-400/10"
-                )}
-              >
-                {metric.trend === "up" ? (
-                  <TrendingUp className="w-3 h-3" />
-                ) : (
-                  <TrendingDown className="w-3 h-3" />
-                )}
-                {metric.change}
-              </Badge>
             </div>
           </CardContent>
         </Card>
