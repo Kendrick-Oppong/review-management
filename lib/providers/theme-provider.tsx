@@ -5,14 +5,20 @@ import { ThemeProvider as NextThemesProvider, useTheme } from "next-themes";
 import { usePathname } from "next/navigation";
 
 function ForcedThemeWatcher() {
-  const { setTheme } = useTheme();
+  const { setTheme, resolvedTheme } = useTheme();
   const pathname = usePathname();
+  const [isInitialMount, setIsInitialMount] = React.useState(true);
 
   React.useEffect(() => {
-    if (pathname === "/") {
-      setTheme("light");
-    } 
-  }, [pathname, setTheme]);
+    if (isInitialMount) {
+      if (pathname === "/") {
+        setTheme("light");
+      } else if (pathname === "/dashboard") {
+        setTheme("dark");
+      }
+      setIsInitialMount(false);
+    }
+  }, [pathname, setTheme, isInitialMount, resolvedTheme]);
 
   return null;
 }
