@@ -1,9 +1,11 @@
 "use client"
 
 import { useEffect, useState } from "react";
+import { useQueryClient } from "@tanstack/react-query";
 import { STORAGE_KEY } from "../constants";
 
 export function useApprovedReviews() {
+  const queryClient = useQueryClient();
   const [approved, setApproved] = useState<number[]>(() => {
     if (typeof window !== "undefined") {
       const stored = localStorage.getItem(STORAGE_KEY);
@@ -20,7 +22,8 @@ export function useApprovedReviews() {
 
   useEffect(() => {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(approved));
-  }, [approved]);
+    queryClient.invalidateQueries({ queryKey: ["reviews"] });
+  }, [approved, queryClient]);
 
   const toggleApproval = (id: number) => {
     setApproved((prev) =>

@@ -5,6 +5,7 @@ import { NormalizedReview } from "@/interface/api";
 import { useGetAllReviews } from "@/lib/hooks/use-reviews";
 import { LoadingSpinner } from "../ui/loading-spinner";
 import { ErrorState } from "../ui/error-state";
+import { useMemo } from "react";
 
 export function GuestReviews() {
   const { approved } = useApprovedReviews();
@@ -14,6 +15,12 @@ export function GuestReviews() {
     isError,
     refetch,
   } = useGetAllReviews();
+
+  const publicReviews = useMemo(() => {
+    return reviews.filter((review: NormalizedReview) =>
+      approved.includes(review.id)
+    );
+  }, [reviews, approved]);
 
   if (isLoading) {
     return (
@@ -37,11 +44,6 @@ export function GuestReviews() {
       </section>
     );
   }
-
-  // Filter approved reviews for this property
-  const publicReviews = reviews.filter((review: NormalizedReview) =>
-    approved.includes(review.id)
-  );
 
   if (publicReviews.length === 0) {
     return null;

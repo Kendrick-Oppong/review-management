@@ -9,6 +9,7 @@ import {
   Building2,
   Users,
 } from "lucide-react";
+import { useMemo } from "react";
 import type { NormalizedReview } from "@/interface/api";
 import { useApprovedReviews } from "@/lib/hooks/use-approve-reviews";
 
@@ -19,71 +20,68 @@ interface MetricsGridProps {
 export function MetricsGrid({ reviews = [] }: Readonly<MetricsGridProps>) {
   const { approved } = useApprovedReviews();
 
-  const totalReviews = reviews.length;
-  const reviewsWithRating = reviews.filter((r) => r.rating && r.rating > 0);
-  const averageRating =
-    reviewsWithRating.length > 0
-      ? (
-          reviewsWithRating.reduce((sum, r) => sum + (r.rating || 0), 0) /
-          reviewsWithRating.length
-        ).toFixed(1)
-      : "0.0";
+  const metrics = useMemo(() => {
+    const totalReviews = reviews.length;
+    const reviewsWithRating = reviews.filter((r) => r.rating && r.rating > 0);
+    const averageRating =
+      reviewsWithRating.length > 0
+        ? (
+            reviewsWithRating.reduce((sum, r) => sum + (r.rating || 0), 0) /
+            reviewsWithRating.length
+          ).toFixed(1)
+        : "0.0";
 
-  const publicReviews = reviews.filter((r) => approved.includes(r.id)).length;
-  const pendingReviews = totalReviews - publicReviews;
+    const publicReviews = reviews.filter((r) => approved.includes(r.id)).length;
+    const pendingReviews = totalReviews - publicReviews;
 
-  const uniqueProperties = new Set(reviews.map((r) => r.listing)).size;
-  const guestToHostReviews = reviews.filter(
-    (r) => r.type === "guest-to-host"
-  ).length;
-  const responseRate =
-    totalReviews > 0
-      ? ((guestToHostReviews / totalReviews) * 100).toFixed(1)
-      : "0.0";
+    const uniqueProperties = new Set(reviews.map((r) => r.listing)).size;
+    const guestToHostReviews = reviews.filter(
+      (r) => r.type === "guest-to-host"
+    ).length;
+    const responseRate =
+      totalReviews > 0
+        ? ((guestToHostReviews / totalReviews) * 100).toFixed(1)
+        : "0.0";
 
-  const metrics = [
-    {
-      title: "Total Reviews",
-      value: totalReviews.toString(),
-
-      icon: MessageSquare,
-      description: "from Hostaway API",
-    },
-    {
-      title: "Average Rating",
-      value: averageRating,
-
-      icon: Star,
-      description: "across all properties",
-    },
-    {
-      title: "Public Reviews",
-      value: publicReviews.toString(),
-
-      icon: Eye,
-      description: "approved for display",
-    },
-    {
-      title: "Pending Approval",
-      value: pendingReviews.toString(),
-
-      icon: AlertTriangle,
-      description: "awaiting review",
-    },
-    {
-      title: "Active Properties",
-      value: uniqueProperties.toString(),
-
-      icon: Building2,
-      description: "with recent reviews",
-    },
-    {
-      title: "Response Rate",
-      value: `${responseRate}%`,
-      icon: Users,
-      description: "host responses",
-    },
-  ];
+    return [
+      {
+        title: "Total Reviews",
+        value: totalReviews.toString(),
+        icon: MessageSquare,
+        description: "from Hostaway API",
+      },
+      {
+        title: "Average Rating",
+        value: averageRating,
+        icon: Star,
+        description: "across all properties",
+      },
+      {
+        title: "Public Reviews",
+        value: publicReviews.toString(),
+        icon: Eye,
+        description: "approved for display",
+      },
+      {
+        title: "Pending Approval",
+        value: pendingReviews.toString(),
+        icon: AlertTriangle,
+        description: "awaiting review",
+      },
+      {
+        title: "Active Properties",
+        value: uniqueProperties.toString(),
+        icon: Building2,
+        description: "with recent reviews",
+      },
+      {
+        title: "Response Rate",
+        value: `${responseRate}%`,
+        icon: Users,
+        description: "host responses",
+      },
+    ];
+  }, [reviews, approved]);
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
