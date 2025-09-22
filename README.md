@@ -5,11 +5,13 @@ A modern, full-stack review management dashboard built with Next.js that provide
 ## 🛠️ Tech Stack
 
 ### Frontend Framework
+
 - **Next.js 15.5.3** - React framework with App Router for server-side rendering and routing
 - **React 19.1.0** - Modern React with concurrent features and improved performance
 - **TypeScript** - Type-safe development with enhanced developer experience
 
 ### Styling & UI
+
 - **Tailwind CSS v4** - Utility-first CSS framework for rapid UI development
 - **Radix UI** - Headless UI components for accessibility and customization
   - `@radix-ui/react-checkbox`
@@ -20,41 +22,49 @@ A modern, full-stack review management dashboard built with Next.js that provide
 - **next-themes** - Dark/light mode support
 
 ### Data Management & State
+
 - **TanStack Query (@tanstack/react-query)** - Powerful data synchronization and caching
 - **TanStack Query DevTools** - Development tools for debugging queries
 
 ### Data Visualization
+
 - **Recharts** - Composable charting library for React
 - Custom chart components with interactive tooltips
 
 ### HTTP Client
+
 - **Axios** - Promise-based HTTP client for API requests
 
 ### Development Tools
+
 - **ESLint** - Code linting and formatting
 - **PostCSS** - CSS processing and optimization
 
 ## 🎯 Key Design & Logic Decisions
 
 ### Architecture
+
 - **Component-Based Architecture**: Modular, reusable components following atomic design principles
 - **App Router Structure**: Next.js 13+ App Router for improved performance and SEO
 - **Type Safety**: Comprehensive TypeScript interfaces for all data structures
 - **Responsive Design**: Mobile-first approach with Tailwind CSS breakpoints
 
 ### Data Flow
+
 - **Centralized Data Fetching**: TanStack Query handles all API calls with caching and synchronization
 - **Data Normalization**: Raw Hostaway API data is normalized to internal `NormalizedReview` format
 - **Channel Mapping**: Numeric channel IDs are mapped to human-readable names
 - **Fallback Strategy**: Static JSON data serves as fallback when API is unavailable
 
 ### UI/UX Decisions
+
 - **shadcn/ui Integration**: Consistent design system with Radix UI primitives
 - **Dark Mode Support**: Theme provider with system preference detection
 - **Loading States**: Comprehensive loading and error state handling
 - **Interactive Charts**: Custom tooltips and hover effects for better data exploration
 
 ### Performance Optimizations
+
 - **Static Generation**: API routes marked as `force-static` for better performance
 - **Query Caching**: TanStack Query provides intelligent caching and background updates
 - **Code Splitting**: Next.js automatic code splitting for optimal bundle sizes
@@ -63,11 +73,13 @@ A modern, full-stack review management dashboard built with Next.js that provide
 ## 🔌 API Behaviors
 
 ### Reviews API
+
 - **Endpoint**: `GET /api/reviews/hostaway`
 - **Purpose**: Fetches property reviews from Hostaway API
 - **Fallback**: Uses static JSON data when API is unavailable or fails
 
 ### Data Normalization Process
+
 1. **Raw Data Ingestion**: Accepts Hostaway API response or static JSON
 2. **Channel Mapping**: Converts numeric channel IDs to readable names:
    - `2018` → "Airbnb"
@@ -78,6 +90,7 @@ A modern, full-stack review management dashboard built with Next.js that provide
 4. **Error Handling**: Graceful degradation with proper HTTP status codes
 
 ### Response Format
+
 ```typescript
 {
   success: boolean;
@@ -87,6 +100,7 @@ A modern, full-stack review management dashboard built with Next.js that provide
 ```
 
 ### Error Scenarios
+
 - **Missing Environment Variables**: Returns 500 with configuration error message
 - **API Failures**: Falls back to static data with console error logging
 - **Network Issues**: Graceful error handling with user-friendly messages
@@ -94,6 +108,7 @@ A modern, full-stack review management dashboard built with Next.js that provide
 ## 🚀 Local Setup Instructions
 
 ### Prerequisites
+
 - **Node.js** 18.17 or later
 - **npm** or **yarn** package manager
 - **Git** for version control
@@ -101,12 +116,14 @@ A modern, full-stack review management dashboard built with Next.js that provide
 ### Environment Setup
 
 1. **Clone the Repository**
+
    ```bash
    git clone <repository-url>
    cd review-management
    ```
 
 2. **Install Dependencies**
+
    ```bash
    npm install
    # or
@@ -128,6 +145,7 @@ A modern, full-stack review management dashboard built with Next.js that provide
    > **Note**: If you don't have Hostaway credentials, the application will automatically fall back to static sample data.
 
 4. **Development Server**
+
    ```bash
    npm run dev
    # or
@@ -147,10 +165,11 @@ A modern, full-stack review management dashboard built with Next.js that provide
 
 ```
 review-management/
-├── app/                    # Next.js App Router
+├── app/                   # Next.js App Router
 │   ├── api/               # API routes
 │   ├── dashboard/         # Dashboard pages
 │   └── layout.tsx         # Root layout
+|   └── page.tsx           # Product Detail Page
 ├── components/            # React components
 │   ├── dashboard/         # Dashboard-specific components
 │   └── ui/               # Reusable UI components
@@ -177,6 +196,7 @@ review-management/
 3. **Filtering**: Test the review filtering and search functionality
 4. **Responsive Design**: Test on different screen sizes
 5. **Theme Toggle**: Switch between light and dark modes
+6. **Product Detail**: Navigate to `/` to view the product detail interface
 
 ### Troubleshooting
 
@@ -194,7 +214,4 @@ review-management/
 - **Dark Mode**: Theme switching with system preference detection
 - **Real-time Data**: Live data fetching with caching and synchronization
 
-
 ---
-
-
