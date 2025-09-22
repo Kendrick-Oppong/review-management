@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Bai_Jamjuree } from "next/font/google";
 import "./globals.css";
 import { QueryProvider } from "@/lib/providers/query-provider";
+import { ThemeProvider } from "@/lib/providers/theme-provider";
 
 const bai_Jamjuree = Bai_Jamjuree({
   subsets: ["latin"],
@@ -22,9 +23,16 @@ export default function RootLayout({
 }>) {
   return (
     <QueryProvider>
-      <html lang="en">
+      <html lang="en" suppressHydrationWarning>
         <body className={`${bai_Jamjuree.className} antialiased`}>
-          {children}
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="dark"
+            enableSystem
+            disableTransitionOnChange
+          >
+            {children}
+          </ThemeProvider>
         </body>
       </html>
     </QueryProvider>
