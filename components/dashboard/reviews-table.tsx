@@ -91,7 +91,7 @@ export function ReviewsTable({ reviews = [] }: Readonly<ReviewsTableProps>) {
 
           <div className="flex items-center gap-2">
             {selectedReviews.length > 0 && (
-              <Button size="sm">
+              <Button size="sm" className="dark:text-white">
                 <Eye className="w-4 h-4 mr-2" />
                 Approve Selected ({selectedReviews.length})
               </Button>
