@@ -13,6 +13,7 @@ import { RatingFilter } from "./rating-filter";
 import { ReviewList } from "./review-list";
 import { useApprovedReviews } from "@/lib/hooks/use-approve-reviews";
 import { ConfirmApprovalDialog } from "./confirm-approval";
+import Link from "next/link";
 
 interface ReviewsTableProps {
   reviews: NormalizedReview[];
@@ -75,14 +76,15 @@ export function ReviewsTable({ reviews = [] }: Readonly<ReviewsTableProps>) {
   return (
     <Card>
       <CardHeader>
-        <div className="flex items-center justify-between">
-          <CardTitle className="flex items-center gap-2">
-            <MessageSquare className="w-5 h-5" />
+        <div className="flex flex-wrap space-y-4 sm:space-y-0 items-center justify-between">
+          <CardTitle className="flex flex-wrap items-center gap-2">
             Reviews Management
             <Badge variant="outline">{filteredReviews.length} reviews</Badge>
           </CardTitle>
-
-          <div className="flex items-center gap-2">
+          <div className="flex flex-wrap items-center gap-2">
+            <Button variant="outline" className="border-primary">
+              <Link href="/">View Property Details</Link>
+            </Button>
             {selectedReviews.length > 0 && (
               <ConfirmApprovalDialog
                 isApproved={approved.some((id) => selectedReviews.includes(id))}

@@ -34,18 +34,18 @@ export default function RootLayout({
           >
             {children}
           </ThemeProvider>
-        <Toaster
-          style={{ fontFamily: "inherit" }}
-          position="top-center"
-          className="text-base"
-          toastOptions={{
-            classNames: {
-              toast: "!bg-background",
-              title: "!text-base !text-black dark:!text-white",
-              description: "!text-base !text-black dark:!text-white !mt-2",
-            },
-          }}
-        />
+          <Toaster
+            style={{ fontFamily: "inherit" }}
+            position="top-center"
+            className="text-base"
+            toastOptions={{
+              classNames: {
+                toast: "!bg-background",
+                title: "!text-base !text-black dark:!text-white",
+                description: "!text-base !text-black dark:!text-white !mt-2",
+              },
+            }}
+          />
         </body>
       </html>
     </QueryProvider>

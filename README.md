@@ -7,17 +7,13 @@ A modern, full-stack review management dashboard built with Next.js that provide
 ### Frontend Framework
 
 - **Next.js 15.5.3** - React framework with App Router for server-side rendering and routing
-- **React 19.1.0** - Modern React with concurrent features and improved performance
+- **React 19** - Modern React with concurrent features and improved performance
 - **TypeScript** - Type-safe development with enhanced developer experience
 
 ### Styling & UI
 
 - **Tailwind CSS v4** - Utility-first CSS framework for rapid UI development
 - **Radix UI** - Headless UI components for accessibility and customization
-  - `@radix-ui/react-checkbox`
-  - `@radix-ui/react-dropdown-menu`
-  - `@radix-ui/react-progress`
-  - `@radix-ui/react-select`
 - **Lucide React** - Beautiful, customizable icons
 - **next-themes** - Dark/light mode support
 
@@ -45,7 +41,7 @@ A modern, full-stack review management dashboard built with Next.js that provide
 ### Architecture
 
 - **Component-Based Architecture**: Modular, reusable components following atomic design principles
-- **App Router Structure**: Next.js 13+ App Router for improved performance and SEO
+- **App Router Structure**: Next.js App Router for performance and SEO
 - **Type Safety**: Comprehensive TypeScript interfaces for all data structures
 - **Responsive Design**: Mobile-first approach with Tailwind CSS breakpoints
 
@@ -60,8 +56,10 @@ A modern, full-stack review management dashboard built with Next.js that provide
 
 - **shadcn/ui Integration**: Consistent design system with Radix UI primitives
 - **Dark Mode Support**: Theme provider with system preference detection
-- **Loading States**: Comprehensive loading and error state handling
-- **Interactive Charts**: Custom tooltips and hover effects for better data exploration
+- **Loading & Error States**: Clear UX feedback during data fetches
+- **Toast Notifications**: Triggered on approval/removal actions
+- **Confirmation Dialogs**: `ConfirmApprovalDialog` ensures safe user actions
+- **Charts & Metrics**: Pending vs Public review metrics, average ratings, and response rates
 
 ### Performance Optimizations
 
@@ -85,7 +83,6 @@ A modern, full-stack review management dashboard built with Next.js that provide
    - `2018` → "Airbnb"
    - `2002` → "Homeaway"
    - `2005` → "Booking.com"
-   - And more...
 3. **Data Transformation**: Maps to internal `NormalizedReview` interface
 4. **Error Handling**: Graceful degradation with proper HTTP status codes
 
