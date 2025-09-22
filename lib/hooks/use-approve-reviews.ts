@@ -25,6 +25,8 @@ const subscribe = (listener: () => void) => {
 
 const getSnapshot = () => globalApproved;
 
+const getServerSnapshot = () => [];
+
 const updateApproved = (newApproved: number[]) => {
   globalApproved = newApproved;
   localStorage.setItem(STORAGE_KEY, JSON.stringify(newApproved));
@@ -32,7 +34,7 @@ const updateApproved = (newApproved: number[]) => {
 };
 
 export function useApprovedReviews() {
-  const approved = useSyncExternalStore(subscribe, getSnapshot);
+  const approved = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
 
   const toggleApproval = (id: number) => {
     const newApproved = approved.includes(id)
