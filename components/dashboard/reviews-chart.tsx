@@ -18,7 +18,7 @@ interface ReviewsChartProps {
 
 export function ReviewsChart({ reviews = [] }: Readonly<ReviewsChartProps>) {
 
-  // Calculate property-based distribution instead of rating distribution
+  // property-based distribution instead of rating distribution
   const propertyStats = reviews.reduce((acc, review) => {
     if (!review.listing || !review.rating) return acc;
 

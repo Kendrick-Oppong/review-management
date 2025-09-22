@@ -12,21 +12,18 @@ import { LoadingSpinner } from "@/components/ui/loading-spinner";
 import { ErrorState } from "@/components/ui/error-state";
 
 export const AllReviews = () => {
-  const { data: reviews, isLoading, isError, refetch } = useGetAllReviews();
+  const {
+    data: reviews = [],
+    isLoading,
+    isError,
+    refetch,
+  } = useGetAllReviews();
 
   const [filters, setFilters] = useState<ReviewFilters>({
     status: "all",
   });
 
-  console.log(reviews);
-
   const filteredReviews = useMemo(() => {
-    // Add additional safety check to ensure reviews is an array
-    if (!reviews || !Array.isArray(reviews)) {
-      console.log("Reviews data:", reviews, "Type:", typeof reviews);
-      return [];
-    }
-
     return reviews.filter((review: NormalizedReview) => {
       // Property filter
       if (filters.propertyName && review.listing !== filters.propertyName) {
@@ -37,21 +34,11 @@ export const AllReviews = () => {
       if (filters.rating && review.rating && review.rating < filters.rating) {
         return false;
       }
-
-      // Category filter
-      if (filters.category) {
-        const hasCategory = review.reviewCategory.some(
-          (cat) => cat.category === filters.category
-        );
-        if (!hasCategory) return false;
-      }
-
       return true;
     });
   }, [reviews, filters]);
 
   const uniqueProperties = useMemo(() => {
-    if (!reviews || !Array.isArray(reviews)) return [];
     return [
       ...new Set(reviews.map((review: NormalizedReview) => review.listing)),
     ];

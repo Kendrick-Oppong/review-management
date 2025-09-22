@@ -19,10 +19,9 @@ interface MetricsGridProps {
   reviews: NormalizedReview[];
 }
 
-export function MetricsGrid({ reviews = [] }: MetricsGridProps) {
-  const safeReviews = reviews || [];
-  const totalReviews = safeReviews.length;
-  const reviewsWithRating = safeReviews.filter((r) => r.rating && r.rating > 0);
+export function MetricsGrid({ reviews = [] }: Readonly<MetricsGridProps>) {
+  const totalReviews = reviews.length;
+  const reviewsWithRating = reviews.filter((r) => r.rating && r.rating > 0);
   const averageRating =
     reviewsWithRating.length > 0
       ? (
@@ -31,14 +30,10 @@ export function MetricsGrid({ reviews = [] }: MetricsGridProps) {
         ).toFixed(1)
       : "0.0";
 
-  const publicReviews = safeReviews.filter(
-    (r) => r.status === "published"
-  ).length;
-  const pendingReviews = safeReviews.filter(
-    (r) => r.status === "pending"
-  ).length;
-  const uniqueProperties = new Set(safeReviews.map((r) => r.listing)).size;
-  const guestToHostReviews = safeReviews.filter(
+  const publicReviews = reviews.filter((r) => r.status === "published").length;
+  const pendingReviews = reviews.filter((r) => r.status === "pending").length;
+  const uniqueProperties = new Set(reviews.map((r) => r.listing)).size;
+  const guestToHostReviews = reviews.filter(
     (r) => r.type === "guest-to-host"
   ).length;
   const responseRate =

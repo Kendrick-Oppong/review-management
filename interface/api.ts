@@ -11,6 +11,7 @@ export interface NormalizedReview {
   guestName: string;
   listing: string;
   channel: string; // mapped from channelId
+  approvedForPublic?: boolean; //  field for public display approval
 }
 
 interface ReviewCategory {
@@ -56,4 +57,12 @@ export interface DashboardHeaderProps {
   filters?: ReviewFilters;
   onFiltersChange?: (filters: ReviewFilters) => void;
   properties?: string[];
+}
+
+export interface ReviewListProps {
+  reviews: NormalizedReview[];
+  selectedReviews: number[];
+  publicReviews: Set<number>;
+  onSelectionChange: (reviewId: number, checked: boolean) => void;
+  onPublicToggle: (reviewId: number) => void;
 }
