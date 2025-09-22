@@ -1,12 +1,9 @@
-export default async function Home() {
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_BASE_URL}/api/reviews/hostaway`,
-    {
-      cache: "no-store",
-    }
-  );
-  const data = await res.json();
+import { PropertyDetail } from "@/components/property-detail/property-detail";
 
-  console.log("reviews:", data);
-  return <h1>Home</h1>;
-}
+const PropertyDetailPage = () => {
+  return (
+      <PropertyDetail />
+  );
+};
+
+export default PropertyDetailPage;
