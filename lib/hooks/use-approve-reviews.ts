@@ -34,7 +34,11 @@ const updateApproved = (newApproved: number[]) => {
 };
 
 export function useApprovedReviews() {
-  const approved = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
+  const approved = useSyncExternalStore(
+    subscribe,
+    getSnapshot,
+    getServerSnapshot
+  );
 
   const toggleApproval = (id: number) => {
     const newApproved = approved.includes(id)
