@@ -10,7 +10,7 @@
     "channelId": 2005,
     "type": "guest-to-host",
     "status": "published",
-    "rating": 8,
+    "rating": 5,
     "externalReviewId": "bk-12345",
     "externalReservationId": "res-12345",
     "publicReview": "Great location, clean apartment but a bit noisy at night.",
@@ -20,9 +20,9 @@
     "isCancelled": 0,
     "autoReviewTemplateId": null,
     "reviewCategory": [
-      { "category": "cleanliness", "rating": 9 },
-      { "category": "communication", "rating": 8 },
-      { "category": "location", "rating": 7 }
+      { "category": "cleanliness", "rating": 3 },
+      { "category": "communication", "rating": 3 },
+      { "category": "location", "rating": 2 }
     ],
     "departureDate": "2021-05-11 22:00:00",
     "arrivalDate": "2021-05-06 08:00:00",
@@ -40,7 +40,7 @@
     "channelId": 2018,
     "type": "guest-to-host",
     "status": "published",
-    "rating": 10,
+    "rating": 4,
     "externalReviewId": "ab-67890",
     "externalReservationId": "res-67890",
     "publicReview": "Exceptional stay! Would definitely book again.",
@@ -50,9 +50,9 @@
     "isCancelled": 0,
     "autoReviewTemplateId": null,
     "reviewCategory": [
-      { "category": "cleanliness", "rating": 10 },
-      { "category": "communication", "rating": 10 },
-      { "category": "value", "rating": 9 }
+      { "category": "cleanliness", "rating": 5 },
+      { "category": "communication", "rating": 2 },
+      { "category": "value", "rating": 4 }
     ],
     "departureDate": "2021-06-01 12:00:00",
     "arrivalDate": "2021-05-28 15:00:00",
@@ -70,7 +70,7 @@
     "channelId": 2009,
     "type": "guest-to-host",
     "status": "published",
-    "rating": 9,
+    "rating": 3,
     "externalReviewId": "air-11111",
     "externalReservationId": "res-11111",
     "publicReview": "Amazing stay at this beautiful property! The location was perfect and the amenities exceeded our expectations.",
@@ -80,10 +80,9 @@
     "isCancelled": 0,
     "autoReviewTemplateId": null,
     "reviewCategory": [
-      { "category": "cleanliness", "rating": 9 },
-      { "category": "communication", "rating": 10 },
-      { "category": "location", "rating": 10 },
-      { "category": "value", "rating": 8 }
+      { "category": "cleanliness", "rating": 5 },
+      { "category": "communication", "rating": 3 },
+      { "category": "location", "rating": 3 }
     ],
     "departureDate": "2021-07-15 11:00:00",
     "arrivalDate": "2021-07-10 14:00:00",
@@ -101,7 +100,7 @@
     "channelId": 2005,
     "type": "guest-to-host",
     "status": "published",
-    "rating": 7,
+    "rating": 5,
     "externalReviewId": "bk-22222",
     "externalReservationId": "res-22222",
     "publicReview": "Great apartment in the heart of Shoreditch. Clean, modern, and well-equipped.",
@@ -111,10 +110,9 @@
     "isCancelled": 0,
     "autoReviewTemplateId": null,
     "reviewCategory": [
-      { "category": "cleanliness", "rating": 10 },
-      { "category": "communication", "rating": 9 },
-      { "category": "location", "rating": 9 },
-      { "category": "value", "rating": 9 }
+      { "category": "cleanliness", "rating": 5 },
+      { "category": "communication", "rating": 5 },
+      { "category": "location", "rating": 5 }
     ],
     "departureDate": "2021-08-20 10:00:00",
     "arrivalDate": "2021-08-15 16:00:00",
@@ -132,7 +130,7 @@
     "channelId": 2017,
     "type": "guest-to-host",
     "status": "published",
-    "rating": 8,
+    "rating": 4,
     "externalReviewId": "exp-33333",
     "externalReservationId": "res-33333",
     "publicReview": "Lovely studio apartment with all the essentials. The building is modern and secure.",
@@ -142,10 +140,9 @@
     "isCancelled": 0,
     "autoReviewTemplateId": null,
     "reviewCategory": [
-      { "category": "cleanliness", "rating": 8 },
-      { "category": "communication", "rating": 10 },
-      { "category": "location", "rating": 9 },
-      { "category": "value", "rating": 8 }
+      { "category": "cleanliness", "rating": 3 },
+      { "category": "communication", "rating": 4 },
+      { "category": "location", "rating": 3 }
     ],
     "departureDate": "2021-09-05 12:00:00",
     "arrivalDate": "2021-09-01 15:00:00",
@@ -163,7 +160,7 @@
     "channelId": 2021,
     "type": "guest-to-host",
     "status": "published",
-    "rating": 9,
+    "rating": 2,
     "externalReviewId": "air-44444",
     "externalReservationId": "res-44444",
     "publicReview": "Fantastic location near London Bridge! The apartment was spotless and had everything we needed.",
@@ -173,10 +170,9 @@
     "isCancelled": 0,
     "autoReviewTemplateId": null,
     "reviewCategory": [
-      { "category": "cleanliness", "rating": 10 },
-      { "category": "communication", "rating": 10 },
-      { "category": "location", "rating": 10 },
-      { "category": "value", "rating": 9 }
+      { "category": "cleanliness", "rating": 1 },
+      { "category": "communication", "rating": 2 },
+      { "category": "location", "rating": 3 }
     ],
     "departureDate": "2021-10-12 11:00:00",
     "arrivalDate": "2021-10-08 14:00:00",
@@ -191,10 +187,10 @@
     "autoReviewId": null,
     "timeDelta": null,
     "scheduledDateTime": null,
-    "channelId":2019,
+    "channelId": 2019,
     "type": "guest-to-host",
     "status": "published",
-    "rating": 6,
+    "rating": 4,
     "externalReviewId": "bk-55555",
     "externalReservationId": "res-55555",
     "publicReview": "The apartment was nice but had some maintenance issues. The heating wasn't working properly.",
@@ -204,10 +200,9 @@
     "isCancelled": 0,
     "autoReviewTemplateId": null,
     "reviewCategory": [
-      { "category": "cleanliness", "rating": 7 },
-      { "category": "communication", "rating": 8 },
-      { "category": "location", "rating": 9 },
-      { "category": "value", "rating": 6 }
+      { "category": "cleanliness", "rating": 3 },
+      { "category": "communication", "rating": 2 },
+      { "category": "location", "rating": 4 }
     ],
     "departureDate": "2021-11-18 10:00:00",
     "arrivalDate": "2021-11-14 16:00:00",
@@ -225,7 +220,7 @@
     "channelId": 2015,
     "type": "guest-to-host",
     "status": "published",
-    "rating": 10,
+    "rating": 5,
     "externalReviewId": "exp-66666",
     "externalReservationId": "res-66666",
     "publicReview": "Exceptional stay! The property exceeded all expectations. Modern, clean, and in a prime location.",
@@ -235,10 +230,9 @@
     "isCancelled": 0,
     "autoReviewTemplateId": null,
     "reviewCategory": [
-      { "category": "cleanliness", "rating": 10 },
-      { "category": "communication", "rating": 10 },
-      { "category": "location", "rating": 10 },
-      { "category": "value", "rating": 10 }
+      { "category": "cleanliness", "rating": 5 },
+      { "category": "communication", "rating": 5 },
+      { "category": "location", "rating": 5 }
     ],
     "departureDate": "2021-12-22 12:00:00",
     "arrivalDate": "2021-12-18 15:00:00",
@@ -256,7 +250,7 @@
     "channelId": 2013,
     "type": "guest-to-host",
     "status": "published",
-    "rating": 8,
+    "rating": 5,
     "externalReviewId": "air-77777",
     "externalReservationId": "res-77777",
     "publicReview": "Good value for money in this area. The apartment was clean and functional.",
@@ -266,10 +260,9 @@
     "isCancelled": 0,
     "autoReviewTemplateId": null,
     "reviewCategory": [
-      { "category": "cleanliness", "rating": 8 },
-      { "category": "communication", "rating": 9 },
-      { "category": "location", "rating": 8 },
-      { "category": "value", "rating": 8 }
+      { "category": "cleanliness", "rating": 5 },
+      { "category": "communication", "rating": 5 },
+      { "category": "location", "rating": 5 }
     ],
     "departureDate": "2022-01-10 11:00:00",
     "arrivalDate": "2022-01-05 14:00:00",
@@ -287,7 +280,7 @@
     "channelId": 2000,
     "type": "guest-to-host",
     "status": "published",
-    "rating": 9,
+    "rating": 3,
     "externalReviewId": "bk-88888",
     "externalReservationId": "res-88888",
     "publicReview": "Perfect location for exploring London! The flat was immaculate and well-appointed.",
@@ -297,10 +290,9 @@
     "isCancelled": 0,
     "autoReviewTemplateId": null,
     "reviewCategory": [
-      { "category": "cleanliness", "rating": 10 },
-      { "category": "communication", "rating": 9 },
-      { "category": "location", "rating": 10 },
-      { "category": "value", "rating": 9 }
+      { "category": "cleanliness", "rating": 3 },
+      { "category": "communication", "rating": 4 },
+      { "category": "location", "rating": 3 }
     ],
     "departureDate": "2022-02-15 10:00:00",
     "arrivalDate": "2022-02-10 16:00:00",

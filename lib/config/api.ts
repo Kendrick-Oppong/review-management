@@ -7,5 +7,6 @@ const api = axios.create({
 
 export const getAllReviews = async (): Promise<NormalizedReview[]> => {
   const endpoint = "/api/reviews/hostaway";
-  return (await api.get(endpoint)).data;
+  const response = await api.get(endpoint);
+  return response.data.result;
 };
