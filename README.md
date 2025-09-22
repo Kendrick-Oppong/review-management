@@ -72,7 +72,7 @@ A modern, full-stack review management dashboard built with Next.js that provide
 
 ### Reviews API
 
-- **Endpoint**: `GET /api/reviews/hostaway`
+- **Endpoint**: `GET http://localhost:3000/api/reviews/hostaway`
 - **Purpose**: Fetches property reviews from Hostaway API
 - **Fallback**: Uses static JSON data when API is unavailable or fails
 
@@ -106,7 +106,7 @@ A modern, full-stack review management dashboard built with Next.js that provide
 
 ### Prerequisites
 
-- **Node.js** 18.17 or later
+- **Node.js** 20 or later
 - **npm** or **yarn** package manager
 - **Git** for version control
 
