@@ -62,7 +62,7 @@ export interface DashboardHeaderProps {
 export interface ReviewListProps {
   reviews: NormalizedReview[];
   selectedReviews: number[];
-  publicReviews: Set<number>;
+  approved: number[];
+  onApprovalToggle: (id: number) => void;
   onSelectionChange: (reviewId: number, checked: boolean) => void;
-  onPublicToggle: (reviewId: number) => void;
 }
