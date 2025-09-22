@@ -11,9 +11,7 @@ function ForcedThemeWatcher() {
   React.useEffect(() => {
     if (pathname === "/") {
       setTheme("light");
-    } else if (pathname === "/dashboard") {
-      setTheme("dark");
-    }
+    } 
   }, [pathname, setTheme]);
 
   return null;
