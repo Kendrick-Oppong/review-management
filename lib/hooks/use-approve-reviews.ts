@@ -6,6 +6,9 @@ import { STORAGE_KEY } from "../constants";
 let globalApproved: number[] = [];
 const listeners = new Set<() => void>();
 
+// Caching server snapshot to avoid creating new references
+const cachedServerSnapshot: number[] = [];
+
 // Initializing from localStorage
 if (typeof window !== "undefined") {
   const stored = localStorage.getItem(STORAGE_KEY);
@@ -25,7 +28,7 @@ const subscribe = (listener: () => void) => {
 
 const getSnapshot = () => globalApproved;
 
-const getServerSnapshot = () => [];
+const getServerSnapshot = () => cachedServerSnapshot;
 
 const updateApproved = (newApproved: number[]) => {
   globalApproved = newApproved;

@@ -2,7 +2,7 @@ import {
   Popover,
   PopoverTrigger,
   PopoverContent,
-} from "@radix-ui/react-popover";
+} from "@/components/ui/popover";
 import {
   SelectTrigger,
   SelectValue,
